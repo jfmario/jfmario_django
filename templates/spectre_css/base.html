@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    {% include 'spectre_css/css_links.html' %}
+    {% block css_links %}
+    {% endblock %}
+
+    <title>{{ title }}</title>
+  </head>
+  <body>
+
+    {% include 'spectre_css/navbar.html' %}
+
+    {% block content %}
+    {% endblock %}
+    {% block js %}
+    {% endblock %}
+  </body>
+</html>

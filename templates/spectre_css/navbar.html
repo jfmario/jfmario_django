@@ -1,0 +1,36 @@
+<div class="container">
+  <div class="columns">
+    <div class="col-2"></div>
+    <div class="col-8">
+      {% if menu %}
+        <header class="navbar">
+          <section class="navbar-section">
+
+            <a class="mr-2 navbar-brand" href="/">{{ site_title }}</a>
+
+            {% for item in menu %}
+              {% if item.is_dropdown %}
+                <div class="dropdown">
+
+                  <a class="btn btn-link dropdown-toggle" href="#" tabindex="0">{{ item.title }}
+                    <i class="icon icon-caret"></i>
+                  </a>
+
+                  <ul class="menu">
+                    {% for subitem in item.menu %}
+                      <li class="menu-item">
+                        <a href="{{ subitem.link }}">{{ subitem.title }}</a>
+                      </li>
+                    {% endfor %}
+                  </ul>
+                </div>
+              {% else %}
+                <a class="btn btn-link" href="{{ item.link }}">{{ item.title }}</a>
+              {% endif %}
+            {% endfor %}
+          </section>
+        </header>
+      {% endif %}
+    </div>
+  </div>
+</div>
